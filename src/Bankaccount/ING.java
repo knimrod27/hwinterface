@@ -1,0 +1,27 @@
+package Bankaccount;
+
+public class ING implements Bankinter{
+    private double balance;
+
+    public ING(double balance) {
+        this.balance = balance;
+    }
+
+    public void depositAmount(double amount) {
+        balance = balance + amount;
+
+    }
+
+    public void withdrawnAmount(double amount) {
+        if(amount <= balance) {
+            balance = balance - amount;
+        }else{
+            System.out.println("Insufficient amount in your account");
+        }
+
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
